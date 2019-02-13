@@ -14,9 +14,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
-<meta name="description" content="DROP heart-mail">
-<link rel="shortcut icon" type="image/png" href="favicon.png"/>
-
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
@@ -34,6 +31,7 @@
 <link rel="stylesheet" type="text/css" href="src/csshake.min.css">
 
 
+
 <script src="src/shake.js">
 	var myShakeEvent;
 	myShakeEvent = new Shake({
@@ -42,6 +40,9 @@
 	});
 
 	myShakeEvent.start();	
+
+</script>
+<script src="src/confetti.js">
 
 </script>
 
@@ -73,7 +74,7 @@
 
 
 
-			<p>2) Add a picture*:</p>
+			<p>2) Add a picture* (square images work best):</p>
 			<!-- <div class=" dropPreview"> -->
 			<!-- <p>Get ready to drop <span id="name"></span></p> -->
 			<img src="img/blankPerson.svg" class="preview"><br><br><br>
@@ -84,45 +85,54 @@
 			<!-- <input type="file" onchange="previewFile()"><br> -->
 
 			<button class="next inactive">NEXT</button><br>
-			<p>*Don't worry: We won't save this information.</p>
+			<p>*Don't worry: We won't save this information.</p><br><br>
 		</div>
 
 
 
 		<div class="section condensed">
 			<h2>How to Drop <span id="name"></span> :</h2>
-			<p>Your heart may want to hold on and win them over patiently, but your mind tells you to let go, once and for all. Whatever you do... do NOT let them make it to your heart!</p>
-			<p class="big condensed boxed"><span class="pink bigger">SHAKE</span> the claw machine, using the button OR by shaking your mobile device.<br><span class="pink bigger">DROP</span> them before time runs out.<br></p>
+			<p class="condensed">Your heart may want to hold on and win them over patiently, but your mind tells you to let go, once and for all. Whatever you do... do NOT let them make it to your heart!</p><br><br>
+			<div class="big condensed boxed "><span class="pink bigger">SHAKE</span> the claw machine using the button.<br><span class="pink bigger">DROP</span> them before time runs out.<br>
 
 
-<div class="examples">
-			<div class="layeredImg">
-				<img src="img/bottomMachine.svg">
-				<img src="img/claw-bad.svg">
-				<img src="img/topMachine.svg">
-				<img src="img/blankPerson.svg" class="preview badExample">
-				<p class="red big">&#10007; NO BAD!!!</p>
-			</div>
+				<div class="examples">
+						<div class="layeredImg">
+							<img src="img/bottomMachine.svg">
+							<img src="img/claw-bad.svg">
+							<img src="img/topMachine.svg">
+							<img src="img/blankPerson.svg" class="preview badExample">
+							<p class="red big">&#10007; NO BAD!!!</p>
+						</div>
 
-			<div class="layeredImg">
-				<img src="img/bottomMachine.svg">
-				<img src="img/claw-good.svg">
-				<img src="img/topMachine.svg">
-				<img src="img/blankPerson.svg" class="preview goodExample">
-				<p class="green big">&#10004; YES GOOD</p>
-			</div>
+						<div class="layeredImg">
+							<img src="img/bottomMachine.svg">
+							<img src="img/claw-good.svg">
+							<img src="img/topMachine.svg">
+							<img src="img/blankPerson.svg" class="preview goodExample">
+							<p class="green big">&#10004; YES GOOD</p>
+						</div>
+				</div>
+			</div><br>
+
+
+			<button class="next enterGame">NEXT</button><br><br>
 		</div>
-			<button class="next startgame">NEXT</button>
-		</div>
-		<div class="section">
-			<p>Drop him before the time runs out!</p>
+		<div class="section"><br>
+			<!-- <p>Drop him before the time runs out!</p> -->
 
 
 
-<div id="canvasholder"><span class="green"><b>PROGRESS</b></span><br></div>
+<div id="canvasholder"><b><span class="green progressText">PROGRESS</span></b><br>
+<img id="win" src="img/win.svg">
+<img id="lose" src="img/lose.svg">
+</div>
 
-<button onclick="shakeMachine()" id="shakeButton">SHAKE</button>
-
+<button onclick="shakeMachine()" id="shakeButton">SHAKE</button><br><br>
+<p class="gameText condensed">Drop <span class='name'></span> before the time runs out!</p>
+<br>
+<button id="restart">TRY AGAIN</button>
+<button onclick="share()" id="share" class="hidden">SHARE (COMING SOON)</button><br><br><br>
 
 			<!-- <button class="next">NEXT</button> -->
 		</div>

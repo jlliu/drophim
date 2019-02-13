@@ -8,8 +8,16 @@
   src: url("src/Sniglet-Regular.otf");
   /* IE9 Compat Modes */
 }
+#confetti-canvas {
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  z-index: -2 !important;
+}
+
 body {
-  background-color: #110020;
+  background-color: #50006a;
   color: white;
   text-align: center;
   font-family: "Sniglet-Regular";
@@ -60,13 +68,14 @@ p {
 }
 
 .boxed {
-  border: 4px solid #FF87DB;
+  /*border: 4px solid $pink;*/
   border-radius: 10px;
   margin-bottom: 40px;
   padding: 30px;
+  background-color: #7f2a94;
 }
 
-p.big {
+.big {
   font-size: 28px;
   line-height: 48px;
 }
@@ -82,6 +91,23 @@ button.inactive {
 
 #logo {
   margin-top: 100px;
+}
+
+#restart {
+  display: none;
+}
+
+#win, #lose {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  width: 300px;
+  height: auto;
+  z-index: 100;
 }
 
 img {
@@ -173,7 +199,7 @@ input[type=file] + label {
   border: none;
   font-family: Sniglet-Regular;
   background-color: #89E9FF;
-  color: #110020;
+  color: #50006a;
   -webkit-box-shadow: 0px 8px 0px 0px #00c4f0;
   -moz-box-shadow: 0px 8px 0px 0px #00c4f0;
   box-shadow: 0px 8px 0px 0px #00c4f0;
@@ -189,6 +215,7 @@ input[type=file] + label {
   right: 0;
   margin: auto;
   text-align: center;
+  position: relative;
 }
 
 /*grid styles*/
