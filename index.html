@@ -131,8 +131,9 @@
 <button onclick="shakeMachine()" id="shakeButton">SHAKE</button><br><br>
 <p class="gameText condensed">Drop <span class='name'></span> before the time runs out!</p>
 <br>
-<button id="restart">TRY AGAIN</button>
-<button onclick="share()" id="share" class="hidden">SHARE (COMING SOON)</button><br><br><br>
+<button id="restart" onclick="restartGame()">TRY AGAIN</button>
+<button onclick="share()" id="share" class="hidden">SHARE (COMING SOON)</button><br><br>
+<a id="restartLink" class="hidden big" onclick="restartGame()" >Play again</a><br><br>
 
 			<!-- <button class="next">NEXT</button> -->
 		</div>

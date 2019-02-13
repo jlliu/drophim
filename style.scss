@@ -79,6 +79,7 @@ p{
 .bigger{
 	font-size:32px;
 }
+
 button.inactive{
 	pointer-events:none;
 	opacity:.3;
@@ -182,7 +183,6 @@ input[type=text]{
     font-family: Sniglet-Regular;
     max-width:400px;
     width:80%;
-
 }
 
 input[type="file"] + label {
@@ -197,7 +197,20 @@ input[type="file"] + label {
 	-moz-box-shadow: 0px 8px 0px 0px rgba(0,196,240,1);
 	box-shadow: 0px 8px 0px 0px rgba(0,196,240,1);
 	min-width:400px;
+	/*margin-top:0px;*/
+	transition:.1s all;
+	position:relative;
+	top:0px;
  
+}
+input[type="file"] + label:active{
+	margin-top:4px;
+	-webkit-box-shadow: 0px 4px 0px 0px rgba(0,196,240,1);
+	-moz-box-shadow: 0px 4px 0px 0px rgba(0,196,240,1);
+	box-shadow: 0px 4px 0px 0px rgba(0,196,240,1);
+	cursor:pointer;
+	margin-bottom:-4px;
+	top:4px;
 }
 .preview{
 	border-radius:80px;
@@ -210,7 +223,13 @@ input[type="file"] + label {
     position:relative;
 }
 /*grid styles*/
-
+a{
+	color:$lemon;
+	transition:.3s all;
+}
+a:hover{
+	color:$green;
+}
 $marginWidth: 8px;
 
 
@@ -284,6 +303,7 @@ canvas{
 }
 
 button{
+	opacity:1;
 	font-family:Sniglet-Bold;
 	padding:20px 40px;
 	border:none;
@@ -299,4 +319,25 @@ button{
 	background: linear-gradient(45deg, #ff87db 0%,#ff5b5e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff87db', endColorstr='#ff5b5e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	color:$lemon;
+	transition:top .1s, box-shadow .1s;
+	position:relative;
+	top:0px;
+
+	-webkit-box-shadow: 0px 10px 0px -2px rgba(222,0,100,1);
+	-moz-box-shadow: 0px 10px 0px -2px rgba(222,0,100,1);
+	box-shadow: 0px 10px 0px -2px rgba(222,0,100,1);
+}
+button:active{
+
+	-webkit-box-shadow: 0px 6px 0px -2px rgba(222,0,100,1);
+	-moz-box-shadow: 0px 6px 0px -2px rgba(222,0,100,1);
+	box-shadow: 0px 6px 0px -2px rgba(222,0,100,1);
+	top:4px;
+
+}
+button:hover{
+	cursor:pointer;
+}
+input:focus, textarea:focus {
+    outline: none;
 }

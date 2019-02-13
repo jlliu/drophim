@@ -244,7 +244,7 @@ var ball = {
 			var accelerated_yPosition = this.yPosition+(6)*t**2;
 			// console.log(accelerated_yPosition);
 			if (winState){
-				console.log('drop ball: win state');
+				// console.log('drop ball: win state');
 				if (accelerated_yPosition  < this.groundPosition){
 					//Don't allow the ball to drop lower than the ground while in free fall
 					this.yPosition = accelerated_yPosition;
@@ -257,7 +257,7 @@ var ball = {
 				}
 			}
 			if (loseState){
-				console.log('drop ball: lose state');
+				// console.log('drop ball: lose state');
 				if (accelerated_yPosition  < 600+paddingTop-5){
 					// console.log("dropping");
 					//Don't allow the ball to drop lower than the ground while in free fall
@@ -271,13 +271,6 @@ var ball = {
 				}
 			}
 
-			// if (winState){ 
-
-			// } else{
-			// 	//Not win state, dropped the ball
-			// 	xPositionScaled= claw.xPosition*canvasScale;
-			// 	// this.xPosition = xPosition;
-			// }
 
 		} else {
 			//Let the ball continue horizontal motion
@@ -317,11 +310,10 @@ function draw() {
 		claw.drawClaw();
 		ball.drawBall(claw);
 		if (gameStarted == true){
-			introSequenceComplete = true;
 			numberOfSteps++;
 			if (claw.xPosition < 135){
-				console.log("Lost and dropped the ball");
 				if (!winState){
+					// console.log("Lost and dropped the ball");
 					loseState= true;
 				}
 				clawIsMoving = false;
@@ -345,12 +337,17 @@ function draw() {
 			}
 			if (second == 3){
 				gameStarted = true;
-				introSequenceComplete = false;
+				
+			}
+			if (second == 4){
+				introSequenceComplete = true;
 			}
 		}
 		if (dropAnimationDone){
 			if (winState){
-				// noLoop();
+				// dropAnimationDone = false;
+				
+				console.log("WIN STATE");
 				$(".progressText").css('visibility','hidden');
 				$(".gameText").html("Congrats, you dropped "+name+"! Now go move on to something bigger and better.")
 				var widthToHeight = 750/460;
@@ -358,11 +355,15 @@ function draw() {
 				// image(win,0,canvas_height/2-canvas_width/widthToHeight/2,canvas_width,canvas_width/widthToHeight);
 
 				$("#shakeButton").hide();
-
 				$("#share").delay(2000).fadeIn(1000);
+				$("#restartLink").delay(2000).fadeIn(1000);
+				noLoop();
+				
 				
 			} else if (loseState) {
-				// noLoop();
+				// dropAnimationDone = false;
+				
+				console.log("LOSE STATE");
 				$(".progressText").css('visibility','hidden');
 				$(".gameText").html("You held onto "+name+" for too long. Drop 'em faster nest time.")
 				var widthToHeight = 750/460;
@@ -370,6 +371,8 @@ function draw() {
 				$("#lose").fadeIn(2000);
 				$("#shakeButton").hide();
 				$("#restart").fadeIn(60);
+				noLoop();
+				
 				
 			} 
 		} else {
@@ -385,23 +388,26 @@ function draw() {
 
 }
 
-$("#restart").click(function(){
-		// loop();
+function restartGame(){
+		noLoop();
 		loseState = false;
 		winState = false;
 		gameEntered = true;
 		gameStarted = false;
 		introSequenceComplete = false;
 		second = 0;
-		console.log(second);
+		// console.log(second);
 		droppedBall = false;
 		count = 0;
 		numberOfSteps = 0;
 		$("#restart").hide();
+		$("#restartLink").hide();
 		$("#share").hide();
 		$("#shakeButton").show();
 		$("#lose").hide();
+		$("#win").hide();
 		$(".gameText").html("Drop "+name+" before the time runs out!");
+		$(".progressText").css('visibility','visible');
 		ballDropTime = null;
 		clawIsMoving = true;
 		ball.xPosition = 0;
@@ -409,7 +415,8 @@ $("#restart").click(function(){
 		claw.xPosition = 460;
 		claw.yPosition= 100;
 		dropAnimationDone = false;
-});
+		loop();
+};
 
 // function restartGame() {
 // 		loop();

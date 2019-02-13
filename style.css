@@ -204,6 +204,20 @@ input[type=file] + label {
   -moz-box-shadow: 0px 8px 0px 0px #00c4f0;
   box-shadow: 0px 8px 0px 0px #00c4f0;
   min-width: 400px;
+  /*margin-top:0px;*/
+  transition: 0.1s all;
+  position: relative;
+  top: 0px;
+}
+
+input[type=file] + label:active {
+  margin-top: 4px;
+  -webkit-box-shadow: 0px 4px 0px 0px #00c4f0;
+  -moz-box-shadow: 0px 4px 0px 0px #00c4f0;
+  box-shadow: 0px 4px 0px 0px #00c4f0;
+  cursor: pointer;
+  margin-bottom: -4px;
+  top: 4px;
 }
 
 .preview {
@@ -219,6 +233,15 @@ input[type=file] + label {
 }
 
 /*grid styles*/
+a {
+  color: #FAFF7F;
+  transition: 0.3s all;
+}
+
+a:hover {
+  color: #89FFB9;
+}
+
 .grid-container {
   width: 100%;
   display: inline-grid;
@@ -284,6 +307,7 @@ canvas {
 }
 
 button {
+  opacity: 1;
   font-family: Sniglet-Bold;
   padding: 20px 40px;
   border: none;
@@ -302,6 +326,27 @@ button {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ff87db", endColorstr="#ff5b5e",GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
   color: #FAFF7F;
+  transition: top 0.1s, box-shadow 0.1s;
+  position: relative;
+  top: 0px;
+  -webkit-box-shadow: 0px 10px 0px -2px #de0064;
+  -moz-box-shadow: 0px 10px 0px -2px #de0064;
+  box-shadow: 0px 10px 0px -2px #de0064;
+}
+
+button:active {
+  -webkit-box-shadow: 0px 6px 0px -2px #de0064;
+  -moz-box-shadow: 0px 6px 0px -2px #de0064;
+  box-shadow: 0px 6px 0px -2px #de0064;
+  top: 4px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:focus, textarea:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */
