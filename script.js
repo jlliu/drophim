@@ -263,7 +263,9 @@ function draw() {
 
 }
 
-
+window.addEventListener('shake', function (e) {
+    e.preventDefault();
+});
 
 window.addEventListener('devicemotion', function (e) {
     // This is where you put your code for dealing with the shake event here
@@ -275,6 +277,7 @@ window.addEventListener('shake', shakeMotion, false);
 
 //function to call when shake occurs
 function shakeMotion() {
+
 	count=count+3;
 	p5Canvas.class('shake shake-constant');
 	setTimeout(function(){p5Canvas.class(' '); },100);
@@ -284,6 +287,7 @@ function shakeMotion() {
 function shakeMachine(){
 	count++;
 	p5Canvas.class('shake shake-constant');
+
 	setTimeout(function(){p5Canvas.class(' '); },100);
 	
 }
