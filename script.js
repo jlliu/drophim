@@ -27,6 +27,7 @@ $(document).ready(function(){
 
 	$(".startgame").click(function(){
 		gameStarted = true;
+		$("#shakeButton").focus();
 	});
 
 
