@@ -260,7 +260,12 @@ function draw() {
 
 
 }
+window.addEventListener('devicemotion', function (e) {
+    // This is where you put your code for dealing with the shake event here
 
+    // Stop the default behavior from triggering the undo dialog (hopefully)
+    e.preventDefault();
+});
 window.addEventListener('shake', shakeMotion, false);
 
 //function to call when shake occurs
