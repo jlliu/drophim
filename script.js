@@ -203,7 +203,10 @@ var drawProgress = function(countNum){
 	// console.log(progressBarWidth+(10*countNum));
 	if (progressBarWidth+(10*countNum) > 390){
 		// console.log("YOU WIN");
-		winState=  true;
+		if (!loseState){
+			winState=  true;
+		}
+		
 		droppedBall = true;
 		rect(width/2-200+3, progress_yPosition+2, 396, 16, 20);
 
@@ -243,7 +246,6 @@ var ball = {
 			if (winState){
 				console.log('drop ball: win state');
 				if (accelerated_yPosition  < this.groundPosition){
-					// console.log("dropping");
 					//Don't allow the ball to drop lower than the ground while in free fall
 					this.yPosition = accelerated_yPosition;
 				    yPositionScaled = this.yPosition*canvasScale;
@@ -319,9 +321,12 @@ function draw() {
 			numberOfSteps++;
 			if (claw.xPosition < 135){
 				console.log("Lost and dropped the ball");
-				loseState= true;
+				if (!winState){
+					loseState= true;
+				}
 				clawIsMoving = false;
 				droppedBall = true;
+				
 				if (ballDropTime == null){
 					ballDropTime = numberOfSteps;
 				}
