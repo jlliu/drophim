@@ -29,9 +29,22 @@
 <!-- <script src="src/fullpage.min.js"></script> -->
 
 <script src="src/p5.min.js"></script>
-<script src="src/shake.js"></script>
+
 <!-- <link rel="stylesheet" type="text/css" href="src/fullpage.min.css"> -->
 <link rel="stylesheet" type="text/css" href="src/csshake.min.css">
+
+
+<script src="src/shake.js">
+	var myShakeEvent;
+	myShakeEvent = new Shake({
+	threshold: 15, // optional shake strength threshold
+	timeout: 500 // optional, determines the frequency of event generation
+	});
+
+	myShakeEvent.start();	
+
+</script>
+
 <title>DROP HIM</title>
 
 

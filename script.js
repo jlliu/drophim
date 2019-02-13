@@ -9,6 +9,7 @@ var clawImg;
 
 var canvasScale = .7;
 var windowWidth;
+// var myShakeEvent;
 
 $(document).ready(function(){
 
@@ -32,10 +33,10 @@ $(document).ready(function(){
 
 
 
-	var myShakeEvent = new Shake({
-    threshold: 15, // optional shake strength threshold
-    timeout: 1000 // optional, determines the frequency of event generation
-	});
+
+
+
+
 });
 
 
@@ -261,6 +262,9 @@ function draw() {
 
 
 }
+
+
+
 window.addEventListener('devicemotion', function (e) {
     // This is where you put your code for dealing with the shake event here
 
@@ -270,7 +274,7 @@ window.addEventListener('devicemotion', function (e) {
 window.addEventListener('shake', shakeMotion, false);
 
 //function to call when shake occurs
-function shakeMotion () {
+function shakeMotion() {
 	count=count+3;
 	p5Canvas.class('shake shake-constant');
 	setTimeout(function(){p5Canvas.class(' '); },100);
