@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<!-- <script src="//www.powr.io/powr.js?external-type=html"></script>  -->
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Lily+Script+One|Molle:400i" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DROP heart-mail">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+
+
+<script src="src/ImageTools.js"></script>
+
+
+<!-- <script src="src/fullpage.min.js"></script> -->
+
+<script src="src/p5.min.js"></script>
+<script src="src/shake.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="src/fullpage.min.css"> -->
+<link rel="stylesheet" type="text/css" href="src/csshake.min.css">
+<title>DROP HIM</title>
+
+
+
+
+</head>
+
+
+<body class="home">
+<!-- <img src="img/logo.svg"> -->
+
+	<div id="fullpage">
+		<div class="section">
+			<img id="logo" src="img/logo.svg"><br><br>
+			<p class="big condensed">Tired of unreciprocated emotional energy?
+				Are you done constantly mentally forgiving people,
+				 even though you say you've already drawn the line?
+				Play this game to help you let them go!</p>
+			<button class="next">NEXT</button>
+		</div>
+		<div class="section inputPage" >
+			<h2>Who do you want to drop?</h2>
+			<h3 class="condensed">Tell us a lil' more about this individual so we can work our magic.</h3>
+			<p>1) Tell us their name*:</p>
+			<input type="text" onchange="saveName()" placeholder="Type in a name (e.g. Chad)"><br>
+
+
+
+			<p>2) Add a picture*:</p>
+			<!-- <div class=" dropPreview"> -->
+			<!-- <p>Get ready to drop <span id="name"></span></p> -->
+			<img src="img/blankPerson.svg" class="preview"><br><br><br>
+			<!-- </div> -->
+			<input type="file" id="fileInput" class="hidden" onchange="previewFile()">
+			<label for="fileInput">Upload an Image</label>
+			<br><br><br>
+			<!-- <input type="file" onchange="previewFile()"><br> -->
+
+			<button class="next inactive">NEXT</button><br>
+			<p>*Don't worry: We won't save this information.</p>
+		</div>
+
+
+
+		<div class="section condensed">
+			<h2>How to Drop <span id="name"></span> :</h2>
+			<p>Your heart may want to hold on and win them over patiently, but your mind tells you to let go, once and for all. Whatever you do... do NOT let them make it to your heart!</p>
+			<p class="big condensed boxed"><span class="pink bigger">SHAKE</span> the claw machine, using the button OR by shaking your mobile device.<br><span class="pink bigger">DROP</span> them before time runs out.<br></p>
+
+
+<div class="examples">
+			<div class="layeredImg">
+				<img src="img/bottomMachine.svg">
+				<img src="img/claw-bad.svg">
+				<img src="img/topMachine.svg">
+				<img src="img/blankPerson.svg" class="preview badExample">
+				<p class="red big">&#10007; NO BAD!!!</p>
+			</div>
+
+			<div class="layeredImg">
+				<img src="img/bottomMachine.svg">
+				<img src="img/claw-good.svg">
+				<img src="img/topMachine.svg">
+				<img src="img/blankPerson.svg" class="preview goodExample">
+				<p class="green big">&#10004; YES GOOD</p>
+			</div>
+		</div>
+			<button class="next startgame">NEXT</button>
+		</div>
+		<div class="section">
+			<p>Drop him before the time runs out!</p>
+
+
+
+<div id="canvasholder"><span class="green"><b>PROGRESS</b></span><br></div>
+
+<button onclick="shakeMachine()">SHAKE</button>
+
+
+			<!-- <button class="next">NEXT</button> -->
+		</div>
+<!-- 		<div class="section">RESULT
+			<h2>You win!</h2>
+		</div> -->
+	</div>
+
+
+
+<!-- 	<div id="wrap">
+	<div class="content-wrapper">
+		<h1>DROP HIM</h1>
+	</div>
+	</div>
+ -->
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
